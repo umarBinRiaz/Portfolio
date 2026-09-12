@@ -1,4 +1,5 @@
-var projects = [
+// Project Data
+const projects = [
     {
         name: "Playtifiy",
         repo: "Playtifiy",
@@ -31,41 +32,73 @@ var projects = [
     }
 ];
 
-var projectGrid = document.getElementById("projectGrid");
+// Contact Details
+const contactLinks = {
+    whatsapp: "https://wa.me/923092230740",
+    linkedin: "https://www.linkedin.com/in/umar-bin-riaz-4230b93a3/",
+    github: "https://github.com/umarBinRiaz",
+    email: "umar.bin.riaz99@gmail.com"
+};
 
-projects.forEach(function(project, index) {
-    var githubUrl = "https://github.com/umarBinRiaz/" + project.repo;
-    var liveUrl = "https://umarbinriaz.github.io/" + project.repo + "/";
+const projectGrid = document.getElementById("projectGrid");
 
-    var card = document.createElement("article");
-    card.className = "project-card";
+// Render Project Cards dynamically using Modern Template Literals
+if (projectGrid) {
+    projects.forEach((project, index) => {
+        const githubUrl = `${contactLinks.github}/${project.repo}`;
+        const liveUrl = `https://umarbinriaz.github.io/${project.repo}/`;
 
-    var techHtml = "";
-    project.tech.forEach(function(item) {
-        techHtml += "<span>" + item + "</span>";
+        const card = document.createElement("article");
+        card.className = "project-card";
+
+        const techHtml = project.tech
+            .map(item => `<span>${item}</span>`)
+            .join("");
+
+        const projectNum = String(index + 1).padStart(2, "0");
+
+        card.innerHTML = `
+            <div>
+                <div class="project-number">${projectNum} / PROJECT</div>
+                <h3>${project.name}</h3>
+                <p>${project.description}</p>
+            </div>
+            <div class="project-meta">
+                <div class="tech">${techHtml}</div>
+                <div class="project-links">
+                    <a href="${githubUrl}" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+                    <a href="${liveUrl}" target="_blank" rel="noopener noreferrer">Live <span aria-hidden="true">↗</span></a>
+                </div>
+            </div>
+        `;
+
+        projectGrid.appendChild(card);
     });
+}
 
-    card.innerHTML =
-        '<div>' +
-            '<div class="project-number">0' + (index + 1) + ' / PROJECT</div>' +
-            '<h3>' + project.name + '</h3>' +
-            '<p>' + project.description + '</p>' +
-        '</div>' +
-        '<div class="project-meta">' +
-            '<div class="tech">' + techHtml + '</div>' +
-            '<div class="project-links">' +
-                '<a href="' + githubUrl + '" target="_blank" rel="noopener">GitHub ↗</a>' +
-                '<a href="' + liveUrl + '" target="_blank" rel="noopener">Live ↗</a>' +
-            '</div>' +
-        '</div>';
+// Update Footer Year Dynamically
+const yearEl = document.getElementById("year");
+if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+}
 
-    projectGrid.appendChild(card);
-});
+// High-Performance Cursor Glow Effect (using requestAnimationFrame to eliminate lag)
+const glow = document.querySelector(".cursor-glow");
+if (glow) {
+    let mouseX = 0;
+    let mouseY = 0;
+    let isTicking = false;
 
-document.getElementById("year").textContent = new Date().getFullYear();
+    window.addEventListener("mousemove", (event) => {
+        mouseX = event.clientX;
+        mouseY = event.clientY;
 
-document.addEventListener("mousemove", function(event) {
-    var glow = document.querySelector(".cursor-glow");
-    glow.style.left = event.clientX + "px";
-    glow.style.top = event.clientY + "px";
-});
+        if (!isTicking) {
+            window.requestAnimationFrame(() => {
+                glow.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+                isTicking = false;
+            });
+            isTicking = true;
+        }
+    });
+}
