@@ -6,9 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0a0a0a">
     <meta name="description"
-        content="Umar Bin Riaz — Web Developer, Designer and Creator. Explore my projects, skills and GitHub work.">
-    <title>Umar Bin Riaz | Developer Portfolio</title>
+        content="Umar Bin Riaz — Web Developer, Designer and Creator specializing in modern frontend, responsive UI, and custom web applications.">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Umar Bin Riaz | Developer Portfolio">
+    <meta property="og:description" content="Explore web development projects, UI design work, and GitHub repositories by Umar Bin Riaz.">
+    <meta property="og:image" content="./assets/01.png">
 
+    <title>Umar Bin Riaz | Web Developer & UI Designer</title>
+
+    <!-- Font preloads for better Performance/LCP -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -20,13 +28,18 @@
 
 <body>
 
-    <div class="cursor-glow"></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
 
     <header class="navbar">
-        <a href="#home" class="brand">
+        <a href="#home" class="brand" aria-label="Umar Bin Riaz Home">
             <span class="brand-mark">UBR</span>
             <span>Umar Bin Riaz</span>
         </a>
+
+        <!-- Mobile Navigation Toggle -->
+        <button class="nav-toggle" aria-label="Toggle Navigation" aria-expanded="false">
+            <span class="hamburger"></span>
+        </button>
 
         <nav class="nav-links">
             <a href="#home">Home</a>
@@ -36,8 +49,8 @@
             <a href="#contact">Contact</a>
         </nav>
 
-        <a class="github-top" href="https://github.com/umarBinRiaz" target="_blank" rel="noopener">
-            GitHub ↗
+        <a class="github-top" href="https://github.com/umarBinRiaz" target="_blank" rel="noopener noreferrer">
+            GitHub <span aria-hidden="true">↗</span>
         </a>
     </header>
 
@@ -45,7 +58,7 @@
         <section id="home" class="hero">
             <div class="hero-content">
                 <div class="status">
-                    <span></span> Available for projects
+                    <span class="status-dot" aria-hidden="true"></span> Available for projects
                 </div>
 
                 <p class="eyebrow">WEB DEVELOPER · DESIGNER · CREATOR</p>
@@ -61,22 +74,24 @@
                 </p>
 
                 <div class="hero-buttons">
-                    <a class="btn primary" href="#projects">Explore Projects <b>↓</b></a>
-                    <a class="btn secondary" href="https://github.com/umarBinRiaz" target="_blank" rel="noopener">View
-                        GitHub ↗</a>
+                    <a class="btn primary" href="#projects">Explore Projects <span aria-hidden="true">↓</span></a>
+                    <a class="btn secondary" href="https://github.com/umarBinRiaz" target="_blank" rel="noopener noreferrer">
+                        View GitHub <span aria-hidden="true">↗</span>
+                    </a>
                 </div>
 
-                <div class="quick-stats">
-                    <div><strong>49</strong><span>Repositories</span></div>
-                    <div><strong>16</strong><span>Stars</span></div>
-                    <div><strong>300+</strong><span>Contributions</span></div>
-                </div>
+                <ul class="quick-stats">
+                    <li><strong>49</strong><span>Repositories</span></li>
+                    <li><strong>16</strong><span>Stars</span></li>
+                    <li><strong>300+</strong><span>Contributions</span></li>
+                </ul>
             </div>
 
             <div class="hero-card">
-                <div class="grid-lines"></div>
+                <div class="grid-lines" aria-hidden="true"></div>
                 <div class="profile-circle">
-                    <img src="./assets/01.png" alt="Umar Bin Riaz GitHub avatar">
+                    <!-- Added dimensions and loading strategy -->
+                    <img src="./assets/01.png" alt="Umar Bin Riaz profile photo" width="160" height="160" loading="eager">
                 </div>
                 <div class="floating-card card-one">
                     <small>Currently building</small>
@@ -86,7 +101,7 @@
                     <small>Focus</small>
                     <strong>Web + UI</strong>
                 </div>
-                <div class="hero-code">
+                <div class="hero-code" aria-hidden="true">
                     <span>&lt;</span> create<span>/&gt;</span>
                 </div>
             </div>
@@ -109,17 +124,18 @@
                         I learn by building — from e-commerce platforms and Islamic
                         knowledge websites to personal music apps and business websites.
                     </p>
-                    <a class="text-link" href="https://github.com/umarBinRiaz" target="_blank" rel="noopener">
-                        See my GitHub journey <span>→</span>
+                    <a class="text-link" href="https://github.com/umarBinRiaz" target="_blank" rel="noopener noreferrer">
+                        See my GitHub journey <span aria-hidden="true">→</span>
                     </a>
                 </div>
 
-                <div class="about-panel">
-                    <div class="panel-row"><span>Based in</span><strong>Pakistan</strong></div>
-                    <div class="panel-row"><span>Role</span><strong>Web Developer</strong></div>
-                    <div class="panel-row"><span>Speciality</span><strong>Frontend & UI</strong></div>
-                    <div class="panel-row"><span>Platform</span><strong>GitHub Pages</strong></div>
-                </div>
+                <!-- Structured using Definition List for semantic clarity -->
+                <dl class="about-panel">
+                    <div class="panel-row"><dt>Based in</dt><dd>Pakistan</dd></div>
+                    <div class="panel-row"><dt>Role</dt><dd>Web Developer</dd></div>
+                    <div class="panel-row"><dt>Speciality</dt><dd>Frontend &amp; UI</dd></div>
+                    <div class="panel-row"><dt>Platform</dt><dd>GitHub Pages</dd></div>
+                </dl>
             </div>
         </section>
 
@@ -129,13 +145,12 @@
                     <p class="eyebrow">02 — SELECTED WORK</p>
                     <h2>Projects I've <span>built.</span></h2>
                 </div>
-                <a class="text-link" href="https://github.com/umarBinRiaz?tab=repositories" target="_blank"
-                    rel="noopener">
-                    All repositories ↗
+                <a class="text-link" href="https://github.com/umarBinRiaz?tab=repositories" target="_blank" rel="noopener noreferrer">
+                    All repositories <span aria-hidden="true">↗</span>
                 </a>
             </div>
 
-            <div id="projectGrid" class="project-grid"></div>
+            <div id="projectGrid" class="project-grid" aria-live="polite"></div>
         </section>
 
         <section id="skills" class="section skills">
@@ -144,14 +159,14 @@
                 <h2>What I <span>work with.</span></h2>
             </div>
 
-            <div class="skill-list">
-                <div class="skill-item"><b>01</b><span>HTML5</span><small>Structure</small></div>
-                <div class="skill-item"><b>02</b><span>CSS3</span><small>Responsive UI</small></div>
-                <div class="skill-item"><b>03</b><span>JavaScript</span><small>Interactions</small></div>
-                <div class="skill-item"><b>04</b><span>Bootstrap</span><small>UI Framework</small></div>
-                <div class="skill-item"><b>05</b><span>Git & GitHub</span><small>Version Control</small></div>
-                <div class="skill-item"><b>06</b><span>UI Design</span><small>Visual Design</small></div>
-            </div>
+            <ul class="skill-list">
+                <li class="skill-item"><span class="skill-num">01</span><span>HTML5</span><small>Structure</small></li>
+                <li class="skill-item"><span class="skill-num">02</span><span>CSS3</span><small>Responsive UI</small></li>
+                <li class="skill-item"><span class="skill-num">03</span><span>JavaScript</span><small>Interactions</small></li>
+                <li class="skill-item"><span class="skill-num">04</span><span>Bootstrap</span><small>UI Framework</small></li>
+                <li class="skill-item"><span class="skill-num">05</span><span>Git &amp; GitHub</span><small>Version Control</small></li>
+                <li class="skill-item"><span class="skill-num">06</span><span>UI Design</span><small>Visual Design</small></li>
+            </ul>
         </section>
 
         <section class="section cta">
@@ -159,7 +174,7 @@
                 <p class="eyebrow">LET'S BUILD</p>
                 <h2>Have an idea?<br><span>Let's make it real.</span></h2>
             </div>
-            <a class="btn primary big" href="mailto:umar.bin.riaz99@gmail.com">Start a conversation ↗</a>
+            <a class="btn primary big" href="mailto:umar.bin.riaz99@gmail.com">Start a conversation <span aria-hidden="true">↗</span></a>
         </section>
 
         <section id="contact" class="contact-section">
@@ -170,19 +185,20 @@
                     <p>For projects, collaborations or just to say hello.</p>
                 </div>
                 <div class="contact-links">
-                    <a href="mailto:umar.bin.riaz99@gmail.com">umar.bin.riaz99@gmail.com ↗</a>
-                    <a href="https://github.com/umarBinRiaz" target="_blank" rel="noopener">github.com/umarBinRiaz ↗</a>
+                    <a href="mailto:umarbinriaz0@gmail.com">umarbinriaz0@gmail.com <span aria-hidden="true">↗</span></a>
+                    <a href="https://github.com/umarBinRiaz" target="_blank" rel="noopener noreferrer">github.com/umarBinRiaz <span aria-hidden="true">↗</span></a>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <span>© <span id="year"></span> Umar Bin Riaz</span>
-        <span>Designed & built with HTML, CSS & JavaScript.</span>
+        <span>© <time id="year"></time> Umar Bin Riaz</span>
+        <span>Designed &amp; built with HTML, CSS &amp; JavaScript.</span>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Deferred script loading to prevent render-blocking -->
+    <script src="script.js" defer></script>
 </body>
 
 </html>
